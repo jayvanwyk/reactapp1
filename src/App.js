@@ -1,8 +1,7 @@
 import React from 'react';
-import ExpenseItem from './components/ExpenseItem';
-import Expenses from './components/Expenses';
+import Expenses from './components/Expenses/Expenses';
 
-function App() {
+const  App = () => {
   const expenses = [
     {
       index: 1,
