@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
-const  App = () => {
+const App = () => {
   const startExpenses = [
     {
       index: 1,
@@ -32,16 +32,16 @@ const  App = () => {
 
   const [expenses, setExpenses] = useState(startExpenses);
 
-  const newExpenseAddedEventHandler = (newExpenseInfo) =>{
+  const newExpenseAddedEventHandler = (newExpenseInfo) => {
     setExpenses([...expenses, newExpenseInfo]);
-  }
+  };
 
   return (
     <div>
       <NewExpense onNewExpenseAdded={newExpenseAddedEventHandler} />
-      <Expenses expenses={expenses}/>
+      <Expenses expenses={expenses} />
     </div>
   );
-}
+};
 
 export default App;
