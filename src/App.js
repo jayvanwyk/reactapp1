@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/NewExpense/NewExpense';
 
 const  App = () => {
-  const expenses = [
+  const startExpenses = [
     {
       index: 1,
       title: 'Car Insurance',
@@ -30,9 +30,15 @@ const  App = () => {
     },
   ];
 
+  const [expenses, setExpenses] = useState(startExpenses);
+
+  const newExpenseAddedEventHandler = (newExpenseInfo) =>{
+    setExpenses([...expenses, newExpenseInfo]);
+  }
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onNewExpenseAdded={newExpenseAddedEventHandler} />
       <Expenses expenses={expenses}/>
     </div>
   );
